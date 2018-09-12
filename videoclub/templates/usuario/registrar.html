@@ -1,0 +1,63 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<div class="container">
+ 	<div class="center jumbotron" style="background-color: #EDFFE4" > 
+		<h4 class="h2 mb-2 font-weight-normal text-center" style="font-family:Bradley Hand">Regístrese</h4>	 
+		<hr />
+			<form role="form" method="post" id='form_registrar'>
+			{% csrf_token %}
+			<div class = "row">
+				<div class="form-group text-center">
+					<span style="color:red"><strong>{{ form.username.errors }}</strong></span>
+					<p><label for="id_username">Nombre de usuario:</label>
+					<input id="id_username" maxlength="30" name="username" type="text" /></p>
+					<span class="helptext">Se requieren 30 caracteres o menos. Permitido solamente: letras, digitos y @/./+/-/_ </span>
+				</div>
+			</div>
+			
+			<div class = "row">
+				<div class="form-group text-center">
+					<p><label for="id_first_name">Nombre:</label> 
+					<input id="id_first_name" maxlength="30" name="first_name" type="text" /></p>
+				</div>
+			</div>
+			<div class = "row">
+				<div class="form-group text-center">
+					<p><label for="id_last_name">Apellidos:</label> 
+					<input id="id_last_name" maxlength="30" name="last_name" type="text" /></p>
+				</div>
+			</div>
+			<div class = "row">
+				<div class="form-group text-center">
+					<p><label for="id_email">Correo:</label> 
+					<input id="id_email" maxlength="254" name="email" type="email" /></p>
+				</div>
+			</div>
+			<div class = "row">
+				<div class="form-group text-center">
+					<p><label for="id_password1">Contraseña:</label> 
+					<input id="id_password1" name="password1" type="password" /></p>
+				</div>
+			</div>
+			<div class = "row">
+				<div class="form-group text-center">
+					<p><label for="id_password2">Confirmar contraseña:</label> 
+					<input id="id_password2" name="password2" type="password" /></p>
+					<span class="helptext">Ingrese la misma contraseña que antes para su verificación.</span>
+           		</div>
+			</div> 
+			     
+			<div class = "row">  
+			   <div class="col-sm-11 col-sm-offset-1 hid">
+           		  <div class="row">
+               	  	 <div class="col-sm-3 col-sm-offset-4 text-center">	             
+						<button  class="btn btn-lg btn-success btn-block" type="submit">Guardar</button>
+			    	</div>
+				  </div>
+			   </div>
+			</div>
+			</form>
+		</div>
+</div>
+{% endblock %}

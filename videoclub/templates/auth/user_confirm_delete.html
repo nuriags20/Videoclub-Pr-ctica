@@ -1,0 +1,15 @@
+{% extends 'base/base2.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="center jumbotron text-center" style="background-color: #FFFFFF" > 
+		<form method="post">
+		{% csrf_token %}
+   			 <h4 style="font-family:Chalkboard SE">¿Estás seguro que deseas borrar el usuario: "{{ user.username }}"?</h4>
+   			 <p><button type="submit" class="btn btn-warning">SI</button></p>
+		</form>
+		<p><a class="btn btn-info" href="{% url 'administracion:listUsr' %}" role="button">NO</a></p>
+	</div>
+</div>
+{% endblock %}

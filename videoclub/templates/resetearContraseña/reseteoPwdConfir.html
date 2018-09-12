@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+
+{% if validlink %}
+
+<div class="container">
+ 	<div class="center jumbotron" style="background-color: #5DADE2 " > 
+		<h4 class="h2 mb-2 font-weight-normal text-center" style="font-family:Bradley Hand">Introduzca una nueva contraseña</h4>	 
+		<hr />
+		<form method="post">
+		{% csrf_token %}
+		
+		
+			<div class = "row">
+				<div class="form-group text-center">
+					<p><label for="id_password1">Nueva contraseña:</label> 
+					<input id="id_password1" name="new_password1" type="password" /></p>
+				</div>
+			</div>
+			<div class = "row">
+				<div class="form-group text-center">
+					<p><label for="id_password2">Confirmar contraseña:</label> 
+					<input id="id_password2" name="new_password2" type="password" /></p>
+					<span class="helptext">Ingrese la misma contraseña que antes para su verificación.</span>
+           		</div>
+			</div> 
+			<div class = "row">  
+			   <div class="col-sm-11 col-sm-offset-1 hid">
+           		  <div class="row">
+               	  	 <div class="col-sm-3 col-sm-offset-4 text-center">	             
+						<button  class="btn btn-lg btn-success btn-block" type="submit">Guardar</button>
+			    	</div>
+				  </div>
+			   </div>
+			</div>    
+			
+		</form>
+	</div>
+</div>
+{% else %}
+<div class="container">
+ 	<div class="center jumbotron" style="background-color: #F1948A" > 
+		<h1 class="text-center">Enlace inválido, ¡ya se utilizó!</h1>
+	</div>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base/base2.html' %}
+
+{% block content %}
+ <div class="container-fluid">
+  		<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+        	<div class="col-md-2">
+        		<img class="img-rounded center" src="{{ pelicula.portada }}" width="250px">                                                         
+			</div>
+			<div class="col-md-8 col-md-offset-1">
+				<p style="font-family:Arial; font-size:26px; color:#FFCC80"><strong>{{ pelicula.titulo }}</strong></p>				
+				<p style="font-family:Calibri (Cuerpo); font-size:20px; color:#85C1E9"><strong> Valoración</strong>
+				<span style="font-family:Calibri (Cuerpo); font-size:12pt; color:#D4E6F1">{{ pelicula.valoracion }}</span></p> 	
+				<p style="font-family:Arial; font-size:14px; color:#17202A"><strong>Año:</strong></p><p style="font-family:Calibri (Cuerpo); font-size:11pt; color:#FFF">{{ pelicula.año }}</p> 
+				<p style="font-family:Arial; font-size:14px; color:#17202A"><strong>Director:</strong></p><p style="font-family:Calibri (Cuerpo); font-size:11pt; color:#FFF"> {{ pelicula.director }}</p>  
+				<p style="font-family:Arial; font-size:14px; color:#17202A"><strong>Reparto:</strong></p><p style="font-family:Calibri (Cuerpo); font-size:11pt; color:#FFF"> {{ pelicula.reparto }}</p>               	
+				<p style="font-family:Arial; font-size:14px; color:#17202A"><strong>Descripción:</strong></p><p style="font-family:Calibri (Cuerpo); font-size:11pt; color:#FFF"> {{ pelicula.descripcion }}</p>
+				<iframe width="560" height="315" src="{{ pelicula.video }}" frameborder="0" allowfullscreen></iframe>
+				<br>
+				<br>
+				<br>
+				<div class="col-sm-1.5 col-sm-offset-4">
+					<p><a class="btn btn-warning btn-lg" href="{% url 'administracion:list' %}" role="button">Atrás</a></p>
+				</div>
+			</div>
+		</div>
+		</div>
+ 	</div> 
+  
+{% endblock %}

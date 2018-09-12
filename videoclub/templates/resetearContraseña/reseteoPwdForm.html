@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block navbar%}
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="center jumbotron text-center" style="background-color:  #EDFFE4" > 
+    	<h3 style="font-family:Chalkduster">Recuperar Contraseña</h3> 
+    	<p style="font-family:Bradley Hand">Introduce tu correo para enviarte una nueva contraseña</p> 
+    	<form method="post">
+			{% csrf_token %}
+			<p><label for="id_email">Correo:</label>
+			<input id="id_email" maxlength="254" name="email" type="email" /></p>
+			<button  class="btn btn-lg btn-success btn-block" type="submit">Enviar</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

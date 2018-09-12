@@ -1,0 +1,27 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+html,
+body {
+  height: 100%;
+}
+
+body {
+     /* Ubicación de la imagen */
+    padding-top: 150px;
+ 	padding-bottom: 100px;
+	background-image: url("Imagenes/Palomitas.jpg");
+	background-position: center center;
+  	background-repeat: no-repeat;
+ 	background-attachment: fixed;
+  	background-size: cover;
+ 	background-color: #464646;
+	
+}
+
+div.jumbotron {
+  position: relative;
+  width: 900px;
+  left: 100px;
+  right: 100px;
+  
+}
+

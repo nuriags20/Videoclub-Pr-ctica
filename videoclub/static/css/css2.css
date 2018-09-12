@@ -1,0 +1,39 @@
+/* Move dow
+n content because we have a fixed navbar that is 50px tall */
+
+body {
+
+	background-image: url("Imagenes/Fondo.jpg");
+	background-position: center center;
+  	background-repeat: no-repeat;
+ 	background-attachment: fixed;
+  	background-size: cover;
+  	background-color: #464646;
+ 	
+}
+
+
+
+
+p.clasificacion {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+p.clasificacion input {
+  position: absolute;
+  top: -100px;
+}
+
+p.clasificacion label {
+  float: right;
+  color: #fff;
+}
+
+p.clasificacion label:hover,
+p.clasificacion label:hover ~ label,
+p.clasificacion input:checked ~ label {
+  color: #dd4;
+}
+

@@ -1,0 +1,35 @@
+{% extends 'base/base2.html' %}
+
+{% block content %}
+<div class="col-md-8 col-md-offset-2" style="text-align:center">
+		<a class="btn btn-info btn-lg" href="{% url 'administracion:newUsr' %}" role="button"><strong>Añadir Usuario</strong></a>
+		<br/>
+		<br/>
+		<br/>
+		<table class="table table-hover">
+		  <thead>
+		    <tr>
+		     
+		      <th scope="col"><strong><p  style="font-size:12pt; color:#000; text-align:center">Usuario</strong></p></th>
+		      <th scope="col"><strong><p  style="font-size:12pt; color:#000; text-align:center">Editar</strong></p></th>
+		      <th scope="col"><strong><p  style="font-size:12pt; color:#000; text-align:center">Eliminar</strong></p></th>
+		    </tr>
+		  </thead>
+		  {% for usuario in object_list %}
+		  <tbody>
+		    <tr>
+		      <td><strong><p  style="font-size:12pt;"><a href="{% url 'administracion:detailUsr' usuario.pk %}">{{ usuario.username }}</a></strong></p></td>
+		      <td><a href="{% url 'administracion:editUsr' usuario.pk %}"><img src="https://cdn4.iconfinder.com/data/icons/project-document-std-pack-3/512/edit_tasks-512.png" width="20px"></a></td>
+		      <td><a href="{% url 'administracion:deleteUsr' usuario.pk %}"><img class="aligncenter" src="https://docs.qgis.org/2.14/es/_images/mActionDeleteSelected.png" width="20px"></a></td>
+		    </tr>
+		  </tbody>
+		{% endfor %}
+		</table>
+		<div class="col-sm-1.5">
+			<br>
+			<br>
+			<p><a class="btn btn-warning btn-lg" href="{% url 'administracion:admin' %}" role="button">Atrás</a></p>
+		</div>
+		</div> 
+	</div>
+{% endblock %}

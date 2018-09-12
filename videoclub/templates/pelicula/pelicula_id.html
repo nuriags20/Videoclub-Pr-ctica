@@ -1,0 +1,48 @@
+{% extends 'base/base1.html' %}
+
+
+{% block content %}
+    <div class="container-fluid">
+  		<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+		<br>
+		<br>
+		<br>
+		<br>
+        	<div class="col-md-3">
+        		<img class="img-rounded center" src="{{ pelicula.portada }}" width="350px">                                                         
+			</div>
+			<div class="col-md-6 col-md-offset-1">
+				
+				<p style="font-family:Marker Felt; font-size:50px; color:#131D29"><strong>{{ pelicula.titulo }}</strong></p>	
+				<div class="estrellas">
+				<form role="form" method="post" id='form_votar'>
+				{% csrf_token %}
+					<p style="font-family:Calibri (Cuerpo); font-size:20px; color:#85C1E9"><strong> Valoración</strong>
+					<span style="font-family:Calibri (Cuerpo); font-size:12pt; color:#D4E6F1">{{ pelicula.valoracion }}</span></p> 
+					<p class="clasificacion">
+						<input id="voto1" type="submit" name="valoracion" value="5" ><label for="voto1">&#9733;</label>
+    					<input id="voto2" type="submit" name="valoracion" value="4"><label for="voto2">&#9733;</label>
+	    				<input id="voto3" type="submit" name="valoracion" value="3"><label for="voto3">&#9733;</label>
+	    				<input id="voto4" type="submit" name="valoracion" value="2"><label for="voto4">&#9733;</label>
+						<input id="voto5" type="submit" name="valoracion" value="1"><label for="voto5">&#9733;</label>	
+					</p> 			
+	  		 	</form>
+
+	  		 	
+	  		  </div>
+	  		 	
+				<a class="btn btn-info btn-lg" href="{{ pelicula.video }}" role="button"><strong>Ver Película</strong></a>
+				<br>
+				<br>
+				<p style="font-family:Arial; font-size:18px; color:#17202A"><strong>Año:</strong></p><p style="font-family:Calibri (Cuerpo); font-size:12pt; color:#D4E6F1">{{ pelicula.año }}</p> 
+				<p style="font-family:Arial; font-size:18px; color:#17202A"><strong>Director:</strong></p><p style="font-family:Calibri (Cuerpo); font-size:12pt; color:#D4E6F1"> {{ pelicula.director }}</p>  
+				<p style="font-family:Arial; font-size:18px; color:#17202A"><strong>Reparto:</strong></p><p style="font-family:Calibri (Cuerpo); font-size:12pt; color:#D4E6F1"> {{ pelicula.reparto }}</p>               	
+				<p style="font-family:Arial; font-size:18px; color:#17202A"><strong>Descripción:</strong></p><p style="font-family:Calibri (Cuerpo); font-size:12pt; color:#D4E6F1"> {{ pelicula.descripcion }}</p>
+				
+			</div>
+		</div>
+		</div>
+ 	</div> 
+  
+{% endblock %}

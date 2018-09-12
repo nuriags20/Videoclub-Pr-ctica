@@ -1,0 +1,21 @@
+{% extends 'base/base2.html' %}
+
+{% block content %}
+ <div class="container-fluid">	
+ 	<div class="row">
+		<div class="col-md-5 col-md-offset-4">
+			<p style="font-family:Arial; font-size:26px; color:#17202A"><strong>Usuario:  </strong><span style="font-family:Calibri (Cuerpo); font-size:24px; color:#FFF">{{ user.username }}</span></p>				
+			<p style="font-family:Arial; font-size:26px; color:#17202A"><strong>Nombre:  </strong><span style="font-family:Calibri (Cuerpo); font-size:24px; color:#FFF">{{ user.first_name }}</span></p> 
+			<p style="font-family:Arial; font-size:26px; color:#17202A"><strong>Apellido:  </strong><span style="font-family:Calibri (Cuerpo); font-size:24px; color:#FFF"> {{ user.last_name }}</span></p>  
+			<p style="font-family:Arial; font-size:26px; color:#17202A"><strong>Email:  </strong><span style="font-family:Calibri (Cuerpo); font-size:24px; color:#FFF"> {{ user.email }}</span></p>               					
+			<p style="font-family:Arial; font-size:26px; color:#17202A"><strong>Contraseña:  </strong><span style="font-family:Calibri (Cuerpo); font-size:18px; color:#FFF"> {{ user.password }}</span></p>               					
+			 
+			<br>
+			<br>
+			<p><a class="btn btn-warning btn-lg" href="{% url 'administracion:listUsr' %}" role="button">Atrás</a></p>
+		 	</div>
+	</div>
+</div>
+
+  
+{% endblock %}

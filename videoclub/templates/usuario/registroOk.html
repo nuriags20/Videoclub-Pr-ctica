@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="container">
+ 	<div class="center jumbotron" style="background-color: #FFFFFF" > 
+ 		<div class="text-center">
+		<h2>¡Bravo!, usted se ha registrado correctamente</h2>
+		<img src="https://i.pinimg.com/originals/ab/9a/07/ab9a07985cfd82eeceafe36edda99e4c.jpg" class="rounded" width="120" height="90">
+		<p>Pulse en <a  href="{% url 'login' %}">Iniciar sesión</a> para acceder al VideoClub</p>
+		</div>
+	</div>
+</div>
+{% endblock %}

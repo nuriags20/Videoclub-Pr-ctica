@@ -1,0 +1,30 @@
+{% extends 'base/base1.html' %}
+
+
+{% block content %}
+	{% if peliculas %}
+    <div class="container-fluid">
+		<div class="row">
+		<div class="col-md-10 col-md-offset-1 text-center">
+			<br>
+			<br>
+			<p><span class="border-bottom" style="font-family:fantasy; font-size:56px; color:#FBFCFC"><strong>{{ etiqueta }}</strong></span></p>
+			{% for pelicula in peliculas %}
+        	<div class="col-sm-3 text-center">
+        		<img src="{{ pelicula.portada }}" class="img-responsive center-block"  width="220">
+        		<h5><a href="{% url 'pelicula:pelicula_id' pk=pelicula.pk %}"><span style="font-family:Calibri (Cuerpo); font-size:16px; color:#85C1E9">{{ pelicula.titulo }}</span></a></h5>      
+			<br/>
+			<br/>                                      
+			</div>
+			
+			
+			{% endfor %}
+		</div>
+		</div>
+		
+	</div>
+    
+    {% else %}
+		<h1>No hay registros de peliculas</h1>
+    {% endif %}
+{% endblock %}
